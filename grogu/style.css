@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle, #111827, #020617);
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    transition: 0.8s;
+}
+
+body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: radial-gradient(
+        rgba(0, 255, 150, 0.15),
+        transparent
+    );
+
+    border-radius: 50%;
+
+    animation: pulse 3s infinite;
+}
+
+.stars {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 45px 45px;
+
+    opacity: 0.2;
+
+    z-index: -1;
+
+    animation: moveStars 25s linear infinite;
+}
+
+.container {
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 30px rgba(0, 255, 150, 0.35);
+
+    animation: float 3s ease-in-out infinite;
+
+    z-index: 1;
+}
+
+#grogu {
+    width: 230px;
+
+    filter: drop-shadow(0 0 25px limegreen);
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#grogu:hover {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+h1 {
+    margin-top: 20px;
+    color: #86efac;
+    text-shadow: 0 0 15px rgba(134, 239, 172, 0.8);
+}
+
+p {
+    font-size: 18px;
+    margin: 20px 0;
+    min-height: 50px;
+}
+
+#powerLevel {
+    margin-top: 15px;
+
+    color: #86efac;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-shadow: 0 0 10px lime;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #22c55e;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #16a34a;
+    transform: scale(1.08);
+}
+
+.darkMode {
+    background: radial-gradient(circle, #2b0000, #000);
+}
+
+.darkMode .container {
+    box-shadow: 0 0 35px crimson;
+}
+
+.darkMode h1 {
+    color: #fca5a5;
+    text-shadow: 0 0 15px crimson;
+}
+
+.darkMode button {
+    background: crimson;
+}
+
+.darkMode button:hover {
+    background: #991b1b;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.darkMode #grogu {
+
+    filter:
+    drop-shadow(0 0 35px crimson)
+    drop-shadow(0 0 60px red);
+
+}
